@@ -1,0 +1,63 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch TestesDiscosVoadores",
+            "request": "launch",
+            "mainClass": "semana1.TestesDiscosVoadores",
+            "projectName": "POO_8852ac4a"
+        },
+        {
+            "type": "java",
+            "name": "Launch CampoMinado",
+            "request": "launch",
+            "mainClass": "semana1.CampoMinado",
+            "projectName": "POO_8852ac4a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ComparaVetores",
+            "request": "launch",
+            "mainClass": "semana1.ComparaVetores",
+            "projectName": "POO_8852ac4a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Piramide",
+            "request": "launch",
+            "mainClass": "semana1.Piramide",
+            "projectName": "POO_8852ac4a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Estatisticas",
+            "request": "launch",
+            "mainClass": "semana1.Estatisticas",
+            "projectName": "POO_8852ac4a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Potencias2",
+            "request": "launch",
+            "mainClass": "semana1.Potencias2",
+            "projectName": "POO_8852ac4a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Potencias2",
+            "request": "launch",
+            "mainClass": "Potencias2",
+            "projectName": "POO_8852ac4a"
+        }
+    ]
+}
