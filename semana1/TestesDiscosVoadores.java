@@ -1,4 +1,5 @@
 package semana1;
+//https://stackoverflow.com/questions/20861476/sorting-a-matrix-by-rows-in-java
 
 import java.util.*;
 
@@ -8,64 +9,91 @@ public class TestesDiscosVoadores{
     public static void printaMatriz(int[][] matriz){
         for(int i = 0; i < matriz.length; i++){
             for(int j = 0; j < matriz[0].length; j++){
-                System.out.print(matriz[i][j] + " ");
-                
+                if(j < matriz[0].length-1) System.out.print(matriz[i][j] + " ");
+                else System.out.print(matriz[i][j]);               
             }
             System.out.println("");
         }
+    }
+
+    
+
+    public static int[][] transposeNaoQuad(int[][] matriz){
+
+        int[][] transp = new int[matriz[0].length][matriz.length];
+        for(int i = 0; i < matriz.length; i++){
+            for(int j = 0; j < matriz[i].length; j++){
+                transp[j][i] = matriz[i][j];
+            }
+        }
+
+        return transp;
+
 
 
     }
 
-    
-    
+    public static void Bubble(int[][] matriz){
 
-    public static void arrumaMatriz(int[][] matriz){
-        // ordena as linhas
-        for(int i = 0; i < matriz.length; i++){
-            int k = 0;
-            int min  = i;
-            for (int j = i+1; j < matriz.length; j++){
-                if(matriz[j][k] == matriz[min][k]) k++;
-
-                if(matriz[j][k] < matriz[min][k]){
-                    min = j;
+        
+        
+        if(matriz[0].length == 1){
+            for(int i = 0; i < matriz.length; i++){
+                for(int j = i; j < matriz.length; j++){
+                    if(matriz[i][0] > matriz[j][0]){
+                        int[] temp = matriz[j].clone();
+                        matriz[j] = matriz[i].clone();
+                        matriz[i] = temp.clone();
+                    }
                 }
             }
 
-            int[] tempLin = matriz[i].clone();
-            matriz[i] = matriz[min];
-            matriz[min] = tempLin;              
 
-            
         }
-        printaMatriz(matriz);
-
-        //ordena as colunas
-       /*  for (int i = 0; i < matriz[0].length-1; i++) {
-            for (int j = 0; j < matriz[0].length-i-1; j++) {
-                int t = 0; 
-                if(matriz[t][j] == matriz[t][j+1]) t++;
-   
-               if (matriz[t][j] > matriz[t][j+1]) {
-   
-                  for (int k = 0; k < matriz.length; k++) {
-                  int tmp = matriz[k][j];
-                  matriz[k][j] = matriz[k][j+1];
-                  matriz[k][j+1]=tmp;
-                  }
-              }
-          }
-       } */
-       System.out.println("");
-        
-            
-        }
-        
-
-
+            //ordena matriz da ultima coluna para a primeira com bubble
+            for(int c = matriz[0].length - 1; c >= 0; c--){
+                for(int i = 0; i < matriz.length; i++){
+                    for(int j = i; j < matriz.length; j++){
+                        if(matriz[i][c] > matriz[j][c]){
+                            int[] temp = matriz[j].clone();
+                            matriz[j] = matriz[i].clone();
+                            matriz[i] = temp.clone();
+                        }
+                    }
+                }
+            }
+    }
 
     
+
+   public static void arrumaMatriz(int[][] matriz){
+
+        if(matriz[0].length == 1){
+            Bubble(matriz);
+            printaMatriz(matriz);
+            System.out.println();
+            printaMatriz(matriz);
+        }
+
+        else{
+            Bubble(matriz);
+            printaMatriz(matriz);
+            System.out.println();
+
+            //coluna
+            int[][] transp1 = transposeNaoQuad(matriz);
+            Bubble(transp1);
+            int[][] transp2 = transposeNaoQuad(transp1);
+            printaMatriz(transp2);
+
+           
+    
+    
+
+
+        }
+
+    }
     
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
@@ -80,8 +108,8 @@ public class TestesDiscosVoadores{
         }
 
         arrumaMatriz(matriz);
-
-
-
+        
+        
+        
     }
 }
