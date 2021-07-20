@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch front",
+            "request": "launch",
+            "mainClass": "semana7.RDI.front",
+            "projectName": "POO_8852ac4a"
+        },
+        {
+            "type": "java",
             "name": "Launch TestesDiscosVoadores",
             "request": "launch",
             "mainClass": "semana1.TestesDiscosVoadores",
